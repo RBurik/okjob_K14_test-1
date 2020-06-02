@@ -683,7 +683,7 @@ if ($(window).width() <= 556) {
     });
   });
 
-  $('.selectpicker').on("click", function() {
+  $('.selectpicker').on("shown.bs.select", function() {
     console.log('works');
     // $(this).next().css({
     //   'top': '.4rem',
