@@ -573,7 +573,7 @@
                                 <div class="main-subblock surname-main-subblock">
                                     <h5 class="main-subblock-title">Пол</h5>
             
-                                    <select class="selectpicker">
+                                    <select class="selectpicker" title="Ваш пол" mobile="true" data-mobile="true">
                                         <option>Мужской</option>
                                         <option>Женский</option>
                                     </select>
@@ -584,7 +584,7 @@
                                 <div class="main-subblock citizenship-main-subblock">
                                     <h5 class="main-subblock-title">Гражданство</h5>
 
-                                    <select class="selectpicker" data-live-search="true">
+                                    <select class="selectpicker"  title="Ваше гражданство" data-live-search="true" mobile="True">
                                         <option>Украины</option>
                                         <option>Молдовы</option>
                                         <option>Белоруссии</option>
@@ -599,6 +599,7 @@
                                         <option>Таджикистана</option>
                                         <option>Узбекистана</option>
                                     </select>
+                                    <label class="placeholder-mob">Гражданство</label>
                                 </div>
                                 <!-- /.citizenship -->
 
@@ -613,7 +614,8 @@
                                 <div class="main-subblock phone-main-subblock">
                                     <h5 class="main-subblock-title">Дата выдачи</h5>
 
-                                    <input type='text' class="datepicker-here" data-auto-close="true" data-offset="-250" placeholder="Дата выдачи">
+                                    <!-- <input type="date"> -->
+                                    <input type='text' class="datepicker-here" data-auto-close="true" data-position="top left" placeholder="Дата выдачи">
                                     <label class="placeholder-mob">Дата выдачи</label>
                                 </div>
                                 <!-- ./phone-main-subblock -->
@@ -621,7 +623,7 @@
                                 <div class="main-subblock mail-number-main-subblock">
                                     <h5 class="main-subblock-title">Дата действия</h5>
         
-                                    <input type='text' class="datepicker-here" data-auto-close="true" data-offset="-250" placeholder="Дата действия">
+                                    <input type='text' class="datepicker-here" data-auto-close="true" data-position="top left" placeholder="Дата действия">
                                     <label class="placeholder-mob">Дата действия</label>
                                 </div>
                                 <!-- ./mail-number-main-subblock -->
@@ -629,7 +631,7 @@
                                 <div class="main-subblock phone-main-subblock">
                                     <h5 class="main-subblock-title">Дата рождения</h5>
         
-                                    <input type='text' class="datepicker-here" data-auto-close="true" data-offset="-250" placeholder="Дата рождения">
+                                    <input type='text' class="datepicker-here" data-auto-close="true" data-position="top left" placeholder="Дата рождения">
                                     <label class="placeholder-mob">Дата рождения</label>
                                 </div>
                                 <!-- ./phone-main-subblock -->
@@ -739,6 +741,8 @@
                         </div>
                         <!-- .special-block -->
 
+                        <hr>
+
                         <div class="main-subblock languages-knowledge-main-subblock">
                             <h5 class="main-subblock-title">Знание языков</h5>
 
@@ -746,11 +750,13 @@
                         </div>
                         <!-- ./languages-knowledge-main-subblock -->
 
+                        <hr>
+
                         <div class="two-column">
                             <div class="main-subblock ready-ride-main-subblock">
                                 <h5 class="main-subblock-title">C какого числа готов/а ехать?</h5>
     
-                                <input type='text' class="datepicker-here" data-auto-close="true" data-offset="-250" placeholder="Дата">
+                                <input type='text' class="datepicker-here" data-auto-close="true" data-position="top left" placeholder="Дата">
                                 <label class="placeholder-mob">C какого числа готов/а ехать?</label>
                             </div>
                             <!-- ./ready-ride-main-subblock -->
@@ -758,7 +764,7 @@
                             <div class="main-subblock location-main-subblock">
                                 <h5 class="main-subblock-title">Где сейчас нахожусь?</h5>
     
-                                <select class="selectpicker" data-live-search="true">
+                                <select class="selectpicker" title="Мое местоположение" data-live-search="true">
                                     <option>Германия (Берлин)</option>
                                     <option>Германия (Франкфурт)</option>
                                     <option>Польша (Варшава)</option>
@@ -768,6 +774,7 @@
                                     <option>Украина (Киев)</option>
                                     <option>Украина (Одесса)</option>
                                 </select>
+                                <label class="placeholder-mob">Где сейчас нахожусь?</label>
                             </div>
                             <!-- ./location-main-subblock -->
                         </div>
@@ -813,7 +820,6 @@
                                 <div class="phone-input">
 
                                     <input placeholder="Номер телефона" type="tel" class="tel-input phone-input number-mask input-gray">
-                                    <label class="placeholder-mob">Телефон</label>
                                     <span>Основной номер</span>
                                 </div>
                                 
@@ -884,7 +890,7 @@
                                     <div class="main-subblock town-main-subblock">
                                         <h5 class="main-subblock-title">Страна и город</h5>
                                     
-                                        <select class="selectpicker" data-live-search="true">
+                                        <select class="selectpicker" title="Страна и город" data-live-search="true">
                                             <option>Германия (Берлин)</option>
                                             <option>Германия (Франкфурт)</option>
                                             <option>Польша (Варшава)</option>
@@ -894,6 +900,7 @@
                                             <option>Украина (Киев)</option>
                                             <option>Украина (Одесса)</option>
                                         </select>
+                                        <label class="placeholder-mob">Страна и город</label>
                                     </div>
                                     <!-- ./town-main-subblock -->
 
@@ -974,7 +981,7 @@
                                 <div class="main-subblock town-main-subblock">
                                     <h5 class="main-subblock-title">Страна и город</h5>
         
-                                    <select class="selectpicker" data-live-search="true">
+                                    <select class="selectpicker" title="Страна и город" data-live-search="true">
                                         <option>Германия (Берлин)</option>
                                         <option>Германия (Франкфурт)</option>
                                         <option>Польша (Варшава)</option>
@@ -984,6 +991,7 @@
                                         <option>Украина (Киев)</option>
                                         <option>Украина (Одесса)</option>
                                     </select>
+                                    <label class="placeholder-mob">Страна и город</label>
                                 </div>
                                 <!-- ./town-main-subblock -->
 
@@ -1035,6 +1043,7 @@
                         <div class="buttons-below">
                             <button class="prev-main-block">Назад</button>
                             <button class="next-main-block">Вперед</button>
+                            <button class="save-main-block">Сохранить</button>
                         </div>
 
                     </div>

@@ -10,7 +10,9 @@ $('.main-block').eq(0).css({
 var $stepsButtonIndex;
 var $switchButtonIndex = 1;
 
-                                                              // action, when you click on circles on the top
+
+// ! action, when you click on circles on the top
+
 $('.steps-number-bar button').on("click", function() {
   $stepsButtonIndex = $(this).index();
   $switchButtonIndex = $stepsButtonIndex;
@@ -48,36 +50,24 @@ $('.steps-number-bar button').on("click", function() {
   }, 150);
 
   if ($stepsButtonIndex == 1) {
-
-    $('.prev-main-block').css('opacity', '0');
-
-    setTimeout(function() {
-      $('.prev-main-block').css('display', 'none');
-    }, 150);
-
+    $('.prev-main-block').css('display', 'none');
   } else {
-    $('.prev-main-block').css({
-      'display': 'initial',
-      'opacity': '1'
-    });
+    $('.prev-main-block').css('display', 'initial');
   }
 
   if ($stepsButtonIndex == $('.steps-number-bar button').length) {
 
-    $('.next-main-block').css('opacity', '0');
+    $('.next-main-block').css('display', 'none');
 
     setTimeout(function() {
       $('.next-main-block').css('display', 'none');
     }, 150);
 
   } else {
-    $('.next-main-block').css({
-      'display': 'initial',
-      'opacity': '1'
-    });
+    $('.next-main-block').css('display', 'initial');
   }
   
-  if ($(window).width() <= 556) {
+  if ($(window).width() <= 556) {   // ? Changing main-block title
     if ($stepsButtonIndex == 1) {
       $('.summary-steps .main-block-title').text('Паспорт');
       $('.summary-steps .main-block-title').append(questionInfoSvg);
@@ -97,7 +87,9 @@ $('.steps-number-bar button').on("click", function() {
 
 $('.prev-main-block').css('display', 'none');
 
-                                                                              // action, when you click on prev-button
+
+// ! action, when you click on prev-button
+
 $('.prev-main-block').on("click", function(e) {
   
 $('html,body').stop().animate({ scrollTop: $('.main-title').offset().top }, 300);
@@ -139,40 +131,52 @@ $('html,body').stop().animate({ scrollTop: $('.main-title').offset().top }, 300)
 
 
   if ($switchButtonIndex == $('.steps-number-bar button').length) {
-
-    $('.next-main-block').css('opacity', '0');
+    $('.next-main-block').css('display', 'none');
   
     setTimeout(function() {
       $('.next-main-block').css('display', 'none');
     }, 150);
   
   } else {
-    $('.next-main-block').css({
-      'display': 'initial',
-      'opacity': '1'
-    });
+    setTimeout(function() {
+      $('.next-main-block').css('display', 'initial');
+    }, 150)
   }
   if ($switchButtonIndex == 1) {
 
-    $('.prev-main-block').css('opacity', '0');
+    $('.prev-main-block').css('display', 'none');
   
     setTimeout(function() {
       $('.prev-main-block').css('display', 'none');
     }, 150);
   
   } else {
-    $('.prev-main-block').css({
-      'display': 'initial',
-      'opacity': '1'
-    });
+    $('.prev-main-block').css('display', 'initial');
+  }
+
+  if ($(window).width() <= 556) {   // ? Changing main-block title
+    if ($switchButtonIndex == 1) {
+      $('.summary-steps .main-block-title').text('Паспорт');
+      $('.summary-steps .main-block-title').append(questionInfoSvg);
+    } else if ($switchButtonIndex == 2) {
+      $('.summary-steps .main-block-title').text('О себе');
+      $('.summary-steps .main-block-title').append(questionInfoSvg);
+    } else if ($switchButtonIndex == 3) {
+      $('.summary-steps .main-block-title').text('Контакты');
+      $('.summary-steps .main-block-title').append(questionInfoSvg);
+    }
   }
 });
 
 
-                                                                            // action, when you click on next-button
+$('.save-main-block').css('display', 'none');
+
+
+// ! action, when you click on next-button
+
 $('.next-main-block').on("click", function(e) {
 
-  $('html,body').stop().animate({ scrollTop: $('.main-title').offset().top }, 300);
+  $('html,body').stop().animate({ scrollTop: $('.main-title').offset().top }, 300);   // ? Scrolling to top
     e.preventDefault();
 
   $switchButtonIndex++;
@@ -187,7 +191,7 @@ $('.next-main-block').on("click", function(e) {
 
   $('.steps-number-bar button').eq($switchButtonIndex).css('box-shadow', '0 0 0 .1875rem #F0F0F0');
 
-  $('.steps-number-bar-fill').css('width', ($switchButtonIndex - 1) * 50 + '%');
+  $('.steps-number-bar-fill').css('width', ($switchButtonIndex - 1) * 50 + '%');    // ? Bar length
 
   $('.main-block').css('opacity', '0');
 
@@ -199,7 +203,7 @@ $('.next-main-block').on("click", function(e) {
     });
   }, 150);
 
-  $('.steps-number-text').css({
+  $('.steps-number-text').css({   // ? Changing steps value
       'opacity': '0'
   });
   setTimeout(function() {
@@ -211,30 +215,24 @@ $('.next-main-block').on("click", function(e) {
 
   if ($switchButtonIndex == $('.steps-number-bar button').length) {
 
-    $('.next-main-block').css('opacity', '0');
-  
-    setTimeout(function() {
-      $('.next-main-block').css('display', 'none');
-    }, 150);
-  
-  } else {
-    $('.next-main-block').css({
-      'display': 'initial',
-      'opacity': '1'
-    });
-  }
-  if ($switchButtonIndex == 1) {
+    $('.next-main-block').css('display', 'none'); // !
 
-    $('.prev-main-block').css('opacity', '0');
-  
-    setTimeout(function() {
-      $('.prev-main-block').css('display', 'none');
-    }, 150);
-  
+    $('.save-main-block').css('display', 'initial');  // !
   } else {
-    $('.prev-main-block').css({
-      'display': 'initial',
-      'opacity': '1'
-    });
+    $('.next-main-block').css('display', 'initial');
+  }
+  if ($switchButtonIndex == 1) {$('.prev-main-block').css('display', 'none')} else {$('.prev-main-block').css('display', 'initial')}
+
+  if ($(window).width() <= 556) {   // ? Changing main-block title
+    if ($switchButtonIndex == 1) {
+      $('.summary-steps .main-block-title').text('Паспорт');
+      $('.summary-steps .main-block-title').append(questionInfoSvg);
+    } else if ($switchButtonIndex == 2) {
+      $('.summary-steps .main-block-title').text('О себе');
+      $('.summary-steps .main-block-title').append(questionInfoSvg);
+    } else if ($switchButtonIndex == 3) {
+      $('.summary-steps .main-block-title').text('Контакты');
+      $('.summary-steps .main-block-title').append(questionInfoSvg);
+    }
   }
 });

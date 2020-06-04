@@ -11,6 +11,14 @@ var $languageInformation = `<div class="language-information"><h5 class="languag
 <div class="language-level-wrapper">
 <p class="language-information-subtitle">Уровень</p>
 <div class="language-level-bar">
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 <div class="slider-fill"></div>
 </div>
 </div>

@@ -418,6 +418,12 @@ $('.language-level-bar').slider({
     $(this).children('.slider-fill').css({
       'width': ui.value * 20 + '%'
     });
+    if (ui.value == 0) {$(this).prev().children('li').css('background-color', '#5199FC')}
+    else if (ui.value == 1) {$(this).prev().children('li').css('background-color', '#5199FC')}
+    else if (ui.value == 2) {$(this).prev().children('li').css('background-color', '#5199FC')}
+    else if (ui.value == 3) {$(this).prev().children('li').css('background-color', '#5199FC')}
+    else if (ui.value == 4) {$(this).prev().children('li').css('background-color', '#5199FC')}
+    else if (ui.value == 5) {$(this).prev().children('li').css('background-color', '#5199FC')}
   }  
 });
 
@@ -643,9 +649,13 @@ $('.editor').trumbowyg({
   svgPath: 'img/icons.svg'
 });
 
-// add masks to input
+// !add masks to input
 $('.number-mask').mask("+99 999 999 99 99");
 
+// !Tel input
+$('.tel-input').intlTelInput();
+
+// !MEDIA <= 556
 if ($(window).width() <= 556) {
 
   $('.phone-input span').text('Основной');
@@ -684,68 +694,53 @@ if ($(window).width() <= 556) {
   });
 
   $('.selectpicker').on("shown.bs.select", function() {
-    console.log('works');
-    // $(this).next().css({
-    //   'top': '.4rem',
-    //   'left': '.75rem', 
-    //   'font-weight': '400', 
-    //   'font-size': '.75rem', 
-    //   'background-color': '#fff', 
-    //   'z-index': '2'
-    // })
-    
-    // $(this).focusout(function() {
+    var liClick;
+    $(this).parent().next().css({
+      'top': '.4rem',
+      'left': '.75rem', 
+      'font-weight': '400', 
+      'font-size': '.75rem', 
+      'background-color': '#fff', 
+      'z-index': '2'
+    })
+    $(this).prev().prev().children('span').css('opacity', '1');
 
-    //   if($(this).val() != "") {
-    //     $(this).next().css({
-    //       'top': '.4rem',
-    //       'left': '.75rem', 
-    //       'font-size': '.75rem', 
-    //       'background-color': '#fff', 
-    //       'z-index': '2'
-    //     })
-    //   } else {
-    //     $(this).next().css({
-    //       'top': '2rem',
-    //       'left': '1rem', 
-    //       'font-size': '1rem', 
-    //       'background-color': 'inherit', 
-    //       'z-index': '0'
-    //     })
-    //   }
-    // });
+    $(this).prev().children().on("click", function() {
+      liClick = 0;
+      liClick++;
+      console.log(liClick);
+    });
+
+    $('.selectpicker').on("hidden.bs.select", function() {
+      if (liClick >= 1) {
+        $(this).parent().next().css({
+          'top': '.4rem',
+          'left': '.75rem', 
+          'font-size': '.75rem', 
+          'background-color': '#fff', 
+          'z-index': '2'
+        })
+      } else {
+        $(this).prev().prev().children('span').css('opacity', '0');
+        $(this).parent().next().css({
+          'top': '2rem',
+          'left': '1rem', 
+          'font-size': '1rem', 
+          'background-color': 'inherit', 
+          'z-index': '0'
+        })
+      }
+    });
   });
 
 
   for(var i = 0; i < $('.main-subblock-title').length; i++) {
+    if ($('.main-subblock-title').eq(i).next().next().hasClass('placeholder-mob') == true) $('.main-subblock-title').eq(i).css('display', 'none')
+  }
 
-    if ($('.main-subblock-title').eq(i).next().next().hasClass('placeholder-mob') == true || $('.main-subblock-title').eq(i).next().children().children().hasClass('placeholder-mob')) {
-      
-      $('.main-subblock-title').eq(i).css('display', 'none');
-  //   } else if ($('.main-subblock-title').eq(i).next().hasClass('bootstrap-select') == true || $('.main-subblock-title').eq(i).next().hasClass('selectpicker') == true) {
-  //     $('.main-subblock-title').eq(i).css({
-  //       'width': 'fit-content',
-  //       'top': '1.7rem',
-  //       'left': '.75rem',
-  //       'font-weight': '400',
-  //       'font-size': '.75rem',
-  //       'background-color': '#fff',
-  //       'z-index': '2'
-  //     });
-    }
+  for (var i = 0; i < $('.datepicker-here').length; i++) {
+    $('.datepicker-here').removeClass('datepicker-here');
+    $('.datepicker-here').attr('type', 'password');
   }
 }
 
-$('.tel-input').intlTelInput();
-
-// datepicker
-if ($(window).width() <= 992) {
-  $('.datepicker-here').attr("data-offset", '-235');
-}
-if ($(window).width() <= 556) {
-  $('.datepicker-here').attr("data-offset", '-435');
-}
-
-$('.datepicker--cell').on("click", function() {
-  $('.datepicker').css('left', '-10000px');
-});
