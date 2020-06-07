@@ -1900,15 +1900,12 @@ a:hover {
   text-decoration: underline;
 }
 a:not([href]):not([tabindex]) {
-  color: inherit;
   text-decoration: none;
 }
 a:not([href]):not([tabindex]):hover {
-  color: inherit;
   text-decoration: none;
 }
 a:not([href]):not([tabindex]):focus {
-  color: inherit;
   text-decoration: none;
   outline: 0;
 }
@@ -2018,7 +2015,6 @@ legend {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   line-height: inherit;
-  color: inherit;
   white-space: normal;
 }
 
@@ -19377,33 +19373,34 @@ input::placeholder {
 .wrapper .container .main .buttons-below {
   margin-top: 2rem;
 }
-.wrapper .container .main .buttons-below button {
+.wrapper .container .main .buttons-below a {
   font-size: 1.125rem;
   line-height: 1.5679rem;
+  cursor: pointer;
   padding: 1rem 2rem;
   border: 0.0625rem solid #5199FC;
   border-radius: 0.25rem;
   transition: 0.15s;
 }
-.wrapper .container .main .buttons-below button:first-child, .wrapper .container .main .buttons-below button:nth-child(2) {
+.wrapper .container .main .buttons-below a:first-child, .wrapper .container .main .buttons-below a:nth-child(2) {
   margin-right: 2rem;
   color: #5199FC;
   background-color: #fff;
 }
-.wrapper .container .main .buttons-below button:first-child:hover, .wrapper .container .main .buttons-below button:nth-child(2):hover {
+.wrapper .container .main .buttons-below a:first-child:hover, .wrapper .container .main .buttons-below a:nth-child(2):hover {
   background: rgba(81, 153, 252, 0.08);
 }
-.wrapper .container .main .buttons-below button:first-child:active, .wrapper .container .main .buttons-below button:nth-child(2):active {
+.wrapper .container .main .buttons-below a:first-child:active, .wrapper .container .main .buttons-below a:nth-child(2):active {
   transform: scale(0.9);
 }
-.wrapper .container .main .buttons-below button:nth-child(3), .wrapper .container .main .buttons-below button:last-child {
+.wrapper .container .main .buttons-below a:nth-child(3), .wrapper .container .main .buttons-below a:last-child {
   color: #fff;
   background-color: #5199FC;
 }
-.wrapper .container .main .buttons-below button:nth-child(3):hover, .wrapper .container .main .buttons-below button:last-child:hover {
+.wrapper .container .main .buttons-below a:nth-child(3):hover, .wrapper .container .main .buttons-below a:last-child:hover {
   box-shadow: 0 0.1875rem 0.75rem 0 rgba(81, 153, 252, 0.4);
 }
-.wrapper .container .main .buttons-below button:nth-child(3):active, .wrapper .container .main .buttons-below button:last-child:active {
+.wrapper .container .main .buttons-below a:nth-child(3):active, .wrapper .container .main .buttons-below a:last-child:active {
   transform: scale(0.9);
 }
 
@@ -19733,7 +19730,7 @@ input::placeholder {
   min-height: 1.125rem;
 }
 
-.datepicker-here {
+.datepicker {
   cursor: pointer;
   background-image: url(../img/calendar.svg);
   background-repeat: no-repeat;
@@ -19744,6 +19741,7 @@ input::placeholder {
 .delete-button {
   font-size: 1.125rem;
   line-height: 1.5679rem;
+  cursor: pointer;
   transition: 0.2s;
   display: flex;
   display: -webkit-flex;
@@ -19774,12 +19772,19 @@ input::placeholder {
   background-color: #fff;
 }
 .add-button:hover {
+  color: #5199FC;
   background: rgba(81, 153, 252, 0.08);
+}
+.add-button:focus {
+  color: #5199FC;
 }
 
 .delete-button {
   color: #707070;
   background-color: #F0F0F0;
+}
+.delete-button:hover {
+  color: #707070;
 }
 .delete-button:hover svg path:nth-child(1) {
   fill: #FF0066;
@@ -19791,6 +19796,9 @@ input::placeholder {
 .delete-button:hover svg path:nth-child(3),
 .delete-button:hover svg path:nth-child(4) {
   stroke: #FF0066;
+}
+.delete-button:focus {
+  color: #707070;
 }
 
 .special-block {
@@ -19865,11 +19873,19 @@ input::placeholder {
   border-radius: 0.25rem;
   background-color: #5199FC;
 }
-.input-group button:first-child {
+.input-group button.bootstrap-touchspin-down {
   margin-right: -1rem;
+  font-size: 0;
+  background-image: url(../img/minus.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.input-group button:last-child {
+.input-group button.bootstrap-touchspin-up {
   margin-left: -1rem;
+  font-size: 0;
+  background-image: url(../img/plus.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .input-group button:hover {
   box-shadow: 0 0.1875rem 0.75rem 0 rgba(81, 153, 252, 0.4);
@@ -20188,8 +20204,9 @@ input::placeholder {
     left: 0;
     z-index: 1000;
   }
-  .wrapper .container .main .buttons-below button {
+  .wrapper .container .main .buttons-below a {
     font-size: 0.875rem;
+    cursor: pointer;
     padding: 1rem;
     display: inline-flex;
     display: -webkit-inline-flex;
@@ -20201,20 +20218,20 @@ input::placeholder {
     max-height: 3rem;
     border-radius: 0;
   }
-  .wrapper .container .main .buttons-below button:first-child, .wrapper .container .main .buttons-below button:nth-child(2) {
+  .wrapper .container .main .buttons-below a:first-child, .wrapper .container .main .buttons-below a:nth-child(2) {
     margin-right: 0;
     background: #fff;
   }
-  .wrapper .container .main .buttons-below button:first-child:hover, .wrapper .container .main .buttons-below button:nth-child(2):hover {
+  .wrapper .container .main .buttons-below a:first-child:hover, .wrapper .container .main .buttons-below a:nth-child(2):hover {
     background: #fff;
   }
-  .wrapper .container .main .buttons-below button:first-child:active, .wrapper .container .main .buttons-below button:nth-child(2):active {
+  .wrapper .container .main .buttons-below a:first-child:active, .wrapper .container .main .buttons-below a:nth-child(2):active {
     transform: scale(1);
   }
-  .wrapper .container .main .buttons-below button:nth-child(3):hover, .wrapper .container .main .buttons-below button:last-child:hover {
+  .wrapper .container .main .buttons-below a:nth-child(3):hover, .wrapper .container .main .buttons-below a:last-child:hover {
     box-shadow: none;
   }
-  .wrapper .container .main .buttons-below button:nth-child(3):active, .wrapper .container .main .buttons-below button:last-child:active {
+  .wrapper .container .main .buttons-below a:nth-child(3):active, .wrapper .container .main .buttons-below a:last-child:active {
     transform: scale(1);
   }
 
