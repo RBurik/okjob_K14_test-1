@@ -8,11 +8,15 @@
     <!-- Add css-files -->
     <link rel="stylesheet" href="css/normalize.css">                    <!-- Normal CSS styles -->
     <link rel="stylesheet" href="css/style.css">                        <!-- Main CSS File -->
-    <link rel="stylesheet" href="css/jquery-ui.min.css">                <!-- Sliders Function -->
     <link rel="stylesheet" href="css/dropzone.css">                     <!-- DropZone Function -->
-    <link rel="stylesheet" href="css/datepicker.min.css">               <!-- Date picker -->
+
+    <link rel="stylesheet" href="css/datepicker/default.css">           <!-- Datepicker -->
+    <link rel="stylesheet" href="css/datepicker/default.date.css">
+    <link rel="stylesheet" href="css/datepicker/default.time.css">
+
     <link rel="stylesheet" href="css/jquery.bootstrap-touchspin.css">   <!-- Number input -->
     <link rel="stylesheet" href="css/intlTelInput.css">                 <!-- Telephone input -->
+    <link rel="stylesheet" href="css/nouislider.min.css">        <!-- Range slider -->
 
 </head>
 
@@ -444,15 +448,15 @@
                             <li><a href="#" class="include-settings-Svg">Профиль</a>
 
                                 <ul class="hide-on-tablet">
-									<li><a href="#">Сменить пароль</a></li>
-									<li><a href="#">Удалиться</a></li>
+									<li><a href="#">Смена пароля</a></li>
+									<li><a href="#">Удалить</a></li>
                                 </ul>
 
                                 <ul class="show-on-tablet-flex">
                                     <li class="active-submenu"><a href="#" class="include-settings-Svg submenu-button">Профиль</a>
                                         <ul>
-                                            <li><a href="#">Сменить пароль</a></li>
-                                            <li><a href="#">Удалиться</a></li>
+                                            <li><a href="#">Смена пароля</a></li>
+                                            <li><a href="#">Удалить</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -523,12 +527,11 @@
                 </div>
                 <!-- ./summary-steps -->
 
-                                                                                        <!-- MAIN BLOCK #1 -->
                 <div class="main-block">
                     <h4 class="main-block-title hide-on-mobile">Паспорт</h4>
                     <hr class="main-block-line hide-on-mobile">
 
-                    <div class="passport">
+                    <div class="tab passport">
                         <div class="main-subblock passport-photo-main-subblock">
                             <h5 class="main-subblock-title">Фото паспорта</h5>
 
@@ -573,7 +576,7 @@
                                 <div class="main-subblock surname-main-subblock">
                                     <h5 class="main-subblock-title">Пол</h5>
             
-                                    <select class="selectpicker" title="Ваш пол" data-mobile="true">
+                                    <select class="selectpicker" title="Ваш пол" data-size="6">
                                         <option>Мужской</option>
                                         <option>Женский</option>
                                     </select>
@@ -584,7 +587,7 @@
                                 <div class="main-subblock citizenship-main-subblock">
                                     <h5 class="main-subblock-title">Гражданство</h5>
 
-                                    <select class="selectpicker"  title="Ваше гражданство" data-live-search="true" data-mobile="true">
+                                    <select class="selectpicker"  title="Ваше гражданство" data-live-search="true" data-size="6">
                                         <option>Украины</option>
                                         <option>Молдовы</option>
                                         <option>Белоруссии</option>
@@ -614,8 +617,7 @@
                                 <div class="main-subblock phone-main-subblock">
                                     <h5 class="main-subblock-title">Дата выдачи</h5>
 
-                                    <!-- <input type="date"> -->
-                                    <input type='text' class="datepicker-here" data-auto-close="true" data-position="top left" placeholder="Дата выдачи">
+                                    <input type='date' class="datepicker" data-auto-close="true" data-position="top left" placeholder="Дата выдачи">
                                     <label class="placeholder-mob">Дата выдачи</label>
                                 </div>
                                 <!-- ./phone-main-subblock -->
@@ -623,7 +625,7 @@
                                 <div class="main-subblock mail-number-main-subblock">
                                     <h5 class="main-subblock-title">Дата действия</h5>
         
-                                    <input type='text' class="datepicker-here" data-auto-close="true" data-position="top left" placeholder="Дата действия">
+                                    <input type='date' class="datepicker" data-auto-close="true" data-position="top left" placeholder="Дата действия">
                                     <label class="placeholder-mob">Дата действия</label>
                                 </div>
                                 <!-- ./mail-number-main-subblock -->
@@ -631,7 +633,7 @@
                                 <div class="main-subblock phone-main-subblock">
                                     <h5 class="main-subblock-title">Дата рождения</h5>
         
-                                    <input type='text' class="datepicker-here" data-auto-close="true" data-position="top left" placeholder="Дата рождения">
+                                    <input type='date' class="datepicker" data-auto-close="true" data-position="top left" placeholder="Дата рождения">
                                     <label class="placeholder-mob">Дата рождения</label>
                                 </div>
                                 <!-- ./phone-main-subblock -->
@@ -640,25 +642,12 @@
                         </div>
                         <!-- ./special-block -->
 
-                        
                         <hr id="buttons-below-line" class="hide-on-mobile">
-
-                        <div class="buttons-below">
-                            <button class="prev-main-block">Назад</button>
-                            <button class="next-main-block">Вперед</button>
-                        </div>
 
                     </div>
                     <!-- ./passport -->
-                </div>
-                <!-- ./main-block -->
 
-                                                                                        <!-- MAIN BLOCK #2 -->
-                <div class="main-block">
-                    <h4 class="main-block-title hide-on-mobile">О себе</h4>
-                    <hr class="main-block-line hide-on-mobile">
-
-                    <div class="about-me">
+                    <div class="tab about-me">
 
                         <div class="main-subblock qualification-main-subblock">
                             <h5 class="main-subblock-title">Квалификация</h5>
@@ -756,7 +745,7 @@
                             <div class="main-subblock ready-ride-main-subblock">
                                 <h5 class="main-subblock-title">C какого числа готов/а ехать?</h5>
     
-                                <input type='text' class="datepicker-here" data-auto-close="true" data-position="top left" placeholder="Дата">
+                                <input type='date' class="datepicker" data-auto-close="true" data-position="top left" placeholder="Дата">
                                 <label class="placeholder-mob">C какого числа готов/а ехать?</label>
                             </div>
                             <!-- ./ready-ride-main-subblock -->
@@ -764,7 +753,7 @@
                             <div class="main-subblock location-main-subblock">
                                 <h5 class="main-subblock-title">Где сейчас нахожусь?</h5>
     
-                                <select class="selectpicker" title="Мое местоположение" data-live-search="true">
+                                <select class="selectpicker" title="Мое местоположение" data-live-search="true" data-size="6">
                                     <option>Германия (Берлин)</option>
                                     <option>Германия (Франкфурт)</option>
                                     <option>Польша (Варшава)</option>
@@ -791,26 +780,13 @@
                                 <label for="search-work-brigades-checkbox"><span class="checkbox-icon"></span>Ищу работу для бригады</label>
                             </div>
                         </div>
-
                         
                         <hr id="buttons-below-line" class="hide-on-mobile">
 
-                        <div class="buttons-below">
-                            <button class="prev-main-block">Назад</button>
-                            <button class="next-main-block">Вперед</button>
-                        </div>
-
                     </div>
                     <!-- ./about-me -->
-                </div>
-                <!-- ./main-block -->
 
-                                                                                        <!-- MAIN BLOCK #3 -->
-				<div class="main-block">
-                    <h4 class="main-block-title hide-on-mobile">Контакты</h4>
-                    <hr class="main-block-line hide-on-mobile">
-
-                    <div class="contacts">
+                    <div class="tab contacts">
 
                         <div class="main-subblock phone-main-subblock">
                             <h5 class="main-subblock-title main-subblock-title">Телефон</h5>
@@ -818,7 +794,6 @@
                             <div class="phone-wrapper">
 
                                 <div class="phone-input">
-
                                     <input placeholder="Номер телефона" type="tel" class="tel-input phone-input number-mask input-gray">
                                     <span>Основной номер</span>
                                 </div>
@@ -890,7 +865,7 @@
                                     <div class="main-subblock town-main-subblock">
                                         <h5 class="main-subblock-title">Страна и город</h5>
                                     
-                                        <select class="selectpicker" title="Страна и город" data-live-search="true" data-mobile="true">
+                                        <select class="selectpicker" title="Страна и город" data-live-search="true" data-size="6">
                                             <option>Германия (Берлин)</option>
                                             <option>Германия (Франкфурт)</option>
                                             <option>Польша (Варшава)</option>
@@ -981,7 +956,7 @@
                                 <div class="main-subblock town-main-subblock">
                                     <h5 class="main-subblock-title">Страна и город</h5>
         
-                                    <select class="selectpicker" title="Страна и город" data-live-search="true" data-mobile="true">
+                                    <select class="selectpicker" title="Страна и город" data-live-search="true" data-size="6">
                                         <option>Германия (Берлин)</option>
                                         <option>Германия (Франкфурт)</option>
                                         <option>Польша (Варшава)</option>
@@ -1039,15 +1014,17 @@
                         <!-- ./delivery-method-main-subblock -->
 
                         <hr id="buttons-below-line" class="hide-on-mobile">
-
-                        <div class="buttons-below">
-                            <button class="prev-main-block">Назад</button>
-                            <button class="next-main-block">Вперед</button>
-                            <button class="save-main-block">Сохранить</button>
-                        </div>
-
+                    
                     </div>
                     <!-- ./contacts -->
+
+                    <div class="buttons-below">
+                        <button class="exit-tab">Выйти</button>
+                        <button class="prev-tab">Назад</button>
+                        <button class="next-tab">Вперед</button>
+                        <button class="save-tab">Сохранить</button>
+                    </div>
+                    <!-- ./button-below -->
 
                 </div>
                 <!-- ./main-block -->
@@ -1069,7 +1046,6 @@
 ================================================== -->
 <script src="js/jquery-3.4.1.min.js"></script>                  <!-- JQuery -->
 <script src="js/jquery-migrate-3.1.0.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>                     <!-- JQuary UI Slider -->
 <script src="js/mmenu.min.js"></script>
 <script src="js/tippy.all.min.js"></script>                     <!-- Tooltips -->
 <script src="js/simplebar.min.js"></script>
@@ -1079,8 +1055,14 @@
 <script src="js/magnific-popup.min.js"></script>
 <script src="js/slick.min.js"></script>
 
+<!-- Range slider -->
+<script src="js/nouislider.min.js"></script>
+
 <!-- Date picker -->
-<script src="js/datepicker.min.js"></script>
+<script src="js/datepicker/picker.js"></script>
+<script src="js/datepicker/picker.date.js"></script>
+<script src="js/datepicker/picker.time.js"></script>    
+<script src="js/datepicker/legacy.js"></script> <!-- Available for IE -->
 
 <!-- Dropzone -->
 <script src="js/dropzone.js"></script>
@@ -1094,6 +1076,7 @@
 <script src="js/leaflet-control-geocoder.js"></script>
 <script src="js/leaflet-markercluster.min.js"></script> -->
 
+<!-- Tel input -->
 <script src="js/intlTelInput-jquery.js"></script>
 
 <!-- Number input functions -->
@@ -1107,7 +1090,7 @@
 <script src="js/language-select.js"></script>
 <script src="js/number-select.js"></script>
 <script src="js/qualification-select.js"></script>
-<script src="js/mainblock-switch.js"></script>
+<script src="js/tab-switch.js"></script>
 <script src="js/special-block-toggle.js"></script>
 <script src="js/index.js"></script>
 

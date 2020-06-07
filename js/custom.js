@@ -964,27 +964,6 @@ $(document).ready(function(){
 		$('.bidding-slider').attr({'data-slider-value': avgValue});
 	}
 
-	// Bidding Slider Init
-	$('.bidding-slider').slider();
-
-	$(".bidding-slider").on("slide", function(slideEvt) {
-		$("#biddingVal").text(ThousandSeparator(parseInt(slideEvt.value)));
-	});
-	$("#biddingVal").text(ThousandSeparator(parseInt($('.bidding-slider').val())));
-
-
-	// Default Bootstrap Range Slider
-	var currencyAttr = $(".range-slider").attr('data-slider-currency');
-	
-	$(".range-slider").slider({
-		formatter: function(value) {
-			return currencyAttr + ThousandSeparator(parseInt(value[0])) + " - " + currencyAttr + ThousandSeparator(parseInt(value[1]));
-		}
-	});
-	
-	$(".range-slider-single").slider();
-
-
 	/*----------------------------------------------------*/
 	/*  Payment Accordion
 	/*----------------------------------------------------*/

@@ -310,22 +310,12 @@ $('.main-button').on("click", function() {
   });
 });
 $('.checkbox').on("click", function() {
-  console.log('works');
+  
   if ($(this).prop('checked') == true) {
     $(this).next($('.checkbox-animation-block')).css('opacity', '1');
   } else {
     $(this).next($('.checkbox-animation-block')).css('opacity', '0');
   }
-});
-$('.language-button').on("click", function() {
-  $(this).find('.main-button-list > li').on("click", function() {
-    $('.language-block-title').text($(this).text());
-    k = 1;
-  });
-  if (k == 1) {
-    $('.language-button-add').css('display', 'block');
-  }
-  k = 0;
 });
 $('.currency-button').on("click", function() {
   $(this).css('box-shadow', '0px 0px 18px rgba(0, 0, 0, 0.12)');
@@ -401,132 +391,6 @@ $('.icon-panel-button').click(function(){
   if (panelIndex == 6) {$('.next-button').css('display', 'none')} else {$('.next-button').css('display', 'inline-block')}
 });
 
-
-  // Slider functions
-$('.language-level-bar').slider({
-  range: "min",
-  min: 0,
-  max: 5,
-  create: function() {
-    $(this).children('.ui-slider-handle').append('<div class="language-prompt" style="display: block;">A1</div>');
-  },
-  slide: function(event, ui) {
-    $(this).find($('.language-prompt')).empty();
-    if (ui.value >= 0) $(this).find($('.language-prompt')).text('A' + (Number(ui.value) + 1));
-    if (ui.value >= 2) $(this).find($('.language-prompt')).text('B' + (Number(ui.value) - 1));
-    if (ui.value >= 4) $(this).find($('.language-prompt')).text('C' + (Number(ui.value) - 3));
-    $(this).children('.slider-fill').css({
-      'width': ui.value * 20 + '%'
-    });
-    if (ui.value == 0) {$(this).prev().children('li').css('background-color', '#5199FC')}
-    else if (ui.value == 1) {$(this).prev().children('li').css('background-color', '#5199FC')}
-    else if (ui.value == 2) {$(this).prev().children('li').css('background-color', '#5199FC')}
-    else if (ui.value == 3) {$(this).prev().children('li').css('background-color', '#5199FC')}
-    else if (ui.value == 4) {$(this).prev().children('li').css('background-color', '#5199FC')}
-    else if (ui.value == 5) {$(this).prev().children('li').css('background-color', '#5199FC')}
-  }  
-});
-
-
-  // Double-slider function
-for (var i = 0; i < $( ".double-slider" ).length; i++) {
-  $( ".double-slider" ).eq(i).slider({
-    range: "min",    
-    values: [ 1, 100 ],
-    slide: function(event, ui) {
-      if(ui.values[ 0 ] > ui.values[ 1 ]) {
-        return false;
-    }
-      $(this).children('.double-slider-fill').css({
-        'left': ui.values[ 0 ] + '%',
-        'width': ui.values[ 1 ] - ui.values[ 0 ] + '%'
-      });
-    }    
-  });
-}
-
-$(".workhours-day-double-slider").children('.ui-slider-handle').eq(1).prepend('<div class="workhours-day-prompt">8-14</div>');
-$(".workhours-day-double-slider").slider({   // Workhours-day slider (first double-slider)
-  min: 8,
-  max: 14,
-  step: 1,
-  range: "min",    
-  values: [ 8, 14 ],
-  slide: function(event, ui) {
-    if(ui.values[ 0 ] > ui.values[ 1 ]) {
-      return false;
-    }
-    $(this).children('.double-slider-fill').css({
-      'left': (ui.values[ 0 ] - 8) * 16.66 + '%',
-      'width': (ui.values[ 1 ] - ui.values[ 0 ]) * 16.66 + '%'
-    });
-    $('.workhours-day-prompt').text((ui.values[ 0 ]) + '-' + (ui.values[ 1 ]));
-  }
-});
-
-$(".workhours-month-double-slider").children('.ui-slider-handle').eq(1).prepend('<div class="workhours-month-prompt">160-360</div>');
-$( ".workhours-month-double-slider" ).slider({   // workhours-month slider (second double-slider)
-  min: 160,
-  max: 360,
-  step: 10,
-  range: "min",    
-  values: [ 160, 360 ],
-  slide: function(event, ui) {
-    if(ui.values[ 0 ] > ui.values[ 1 ]) {
-      return false;
-  }
-    $(this).children('.double-slider-fill').css({
-      'left': (ui.values[ 0 ] - 160) * 0.5 + '%',
-      'width': (ui.values[ 1 ] - ui.values[ 0 ]) * 0.5 + '%'
-    });
-    $('.workhours-month-prompt').text((ui.values[ 0 ]) + '-' + (ui.values[ 1 ]));
-  }
-});
-
-$(".people-num-double-slider").children('.ui-slider-handle').eq(1).prepend('<div class="people-num-prompt">1-10</div>');
-$( ".people-num-double-slider" ).slider({   // People-num slider (third double-slider)
-  min: 0,
-  max: 9,
-  step: 1,
-  range: "min",    
-  values: [ 0, 9 ],
-  slide: function(event, ui) {
-    if(ui.values[ 0 ] > ui.values[ 1 ]) {
-      return false;
-  }
-    $(this).children('.double-slider-fill').css({
-      'left': (ui.values[ 0 ]) * 11.11 + '%',
-      'width': (ui.values[ 1 ] - ui.values[ 0 ]) * 11.11 + '%'
-    });
-    $('.people-num-prompt').empty();
-    $('.people-num-prompt').text((ui.values[ 0 ] + 1) + '-' + (ui.values[ 1 ] + 1));
-  }    
-});
-
-$(".production-term-double-slider").children('.ui-slider-handle').eq(1).prepend('<div class="production-term-prompt">1-90</div>');
-$( ".production-term-double-slider" ).slider({   // production-term slider (forth double-slider)
-  min: 0,
-  max: 90,
-  step: 5,
-  range: "min",    
-  values: [ 0, 90 ],
-  slide: function(event, ui) {
-    if (ui.values[ 0 ] > ui.values[ 1 ]) {
-      return false;
-  }
-    $(this).children('.double-slider-fill').css({
-      'left': (ui.values[ 0 ]) * 1.11 + '%',
-      'width': (ui.values[ 1 ] - ui.values[ 0 ]) * 1.11 + '%'
-    });
-    if (ui.values[ 0 ] == 0 && ui.values[ 1 ] != 0) {
-      $('.production-term-prompt').text(1 + '-' + (ui.values[ 1 ]));
-    } else if (ui.values[ 0 ] == 0 && ui.values[ 1 ] == 0) {
-      $('.production-term-prompt').text(1 + '-' + 1);
-    } else {
-      $('.production-term-prompt').text((ui.values[ 0 ]) + '-' + (ui.values[ 1 ]));
-    }
-  }
-});
 
 
   // Minus-Plus block functions
@@ -686,15 +550,17 @@ if ($(window).width() <= 556) {
           'top': '2rem',
           'left': '1rem', 
           'font-size': '1rem', 
-          'background-color': 'inherit', 
-          'z-index': '0'
+          'background-color': '#fff', 
+          'z-index': '2'
         })
       }
     });
   });
 
   $('.selectpicker').on("shown.bs.select", function() {
+
     var liClick;
+
     $(this).parent().next().css({
       'top': '.4rem',
       'left': '.75rem', 
@@ -703,12 +569,17 @@ if ($(window).width() <= 556) {
       'background-color': '#fff', 
       'z-index': '2'
     })
-    $(this).prev().prev().children('span').css('opacity', '1');
+    
+    $(this).parent().find('.filter-option').css('opacity', '1');
 
-    $(this).prev().children().on("click", function() {
+    $(this).prev().children('ul').children('li').on("click", function() {
       liClick = 0;
       liClick++;
-      console.log(liClick);
+    });
+
+    $(this).prev().prev().children('filter-option').on("click", function() {
+      liClick = 0;
+      liClick++;
     });
 
     $('.selectpicker').on("hidden.bs.select", function() {
@@ -720,8 +591,12 @@ if ($(window).width() <= 556) {
           'background-color': '#fff', 
           'z-index': '2'
         })
+
+        $(this).parent().find('.filter-option').css('opacity', '1');
+
       } else {
-        $(this).prev().prev().children('span').css('opacity', '0');
+        $(this).parent().find('.filter-option').css('opacity', '0');
+
         $(this).parent().next().css({
           'top': '2rem',
           'left': '1rem', 
@@ -737,10 +612,72 @@ if ($(window).width() <= 556) {
   for(var i = 0; i < $('.main-subblock-title').length; i++) {
     if ($('.main-subblock-title').eq(i).next().next().hasClass('placeholder-mob') == true) $('.main-subblock-title').eq(i).css('display', 'none')
   }
-
-  for (var i = 0; i < $('.datepicker-here').length; i++) {
-    $('.datepicker-here').removeClass('datepicker-here');
-    $('.datepicker-here').attr('type', 'password');
-  }
 }
 
+
+// ! Wrong value
+var $str;
+
+$('.tel-input').on("keyup", function() {
+  $str = $(this).val();
+  
+  for (var i = 0; i < $str.length; i++) {
+    if ($str[i] == '+' || $str[i] == '_' || $str[i] == ' ') {
+      $str = $str.replace(/\+/g, '');
+      $str = $str.replace(/_/g, '');
+      $str = $str.replace(/ /g, '');
+    }
+  }
+
+  if ($str.length < 4) {
+
+    $(this).addClass('wrong-value');
+
+    if ($(this).parent().parent().next().hasClass('wrong-value-text') == false) {
+      $(this).parent().parent().after('<p class="wrong-value-text">Неверный формат номера*</p>');
+      $(this).parent().parent().next().next().slideUp(200);
+    }
+
+  } else if ($str.length >= 4) {
+    
+    $(this).removeClass('wrong-value');
+
+    if ($(this).parent().parent().next().hasClass('wrong-value-text') == true) {
+      $(this).parent().parent().next().remove();
+    }
+
+    $(this).parent().parent().next().slideDown(300);
+  }
+});
+
+
+// ! Datepicker
+var $datepicker = $('.datepicker').pickadate();
+var picker = $datepicker.pickadate('picker');
+
+// Russian
+$('.datepicker').pickadate({
+  monthsFull: [ 'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря' ],
+  monthsShort: [ 'янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек' ],
+  weekdaysFull: [ 'воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота' ],
+  weekdaysShort: [ 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб' ],
+  today: 'Сегодня',
+  clear: 'Удалить',
+  close: 'Закрыть',
+  firstDay: 1,
+  format: 'd mmmm yyyy г.',
+  formatSubmit: 'yyyy/mm/dd', 
+  labelMonthNext: 'Следующий месяц',
+  labelMonthPrev: 'Предыдущий месяц',
+})
+
+// ? Set OS datepicker on mobile phones
+if ($(window).width() <= 556) {
+  for (var i = 0; i < $('.datepicker').length; i++) {
+    $('.datepicker').eq(i).pickadate().pickadate('picker').stop();
+  }
+} else {
+  for (var i = 0; i < $('.datepicker').length; i++) {
+    $('.datepicker').eq(i).pickadate().pickadate('picker').start();
+  }
+}

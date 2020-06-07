@@ -193,6 +193,9 @@
       cursor: default; }
     .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
       cursor: pointer; }
+      .dropzone.dz-clickable .dz-message img, .dropzone.dz-clickable .dz-message img {
+        height: 1.3rem;
+      }
   .dropzone.dz-started .dz-message {
     display: none; }
   .dropzone.dz-drag-hover {

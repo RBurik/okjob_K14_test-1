@@ -54,7 +54,7 @@ $('.phone-add').on("click", function() {
     $('.phone-wrapper:last').css('display', 'none');
     $('.phone-wrapper:last').slideDown(300);
 
-    $('.selectpicker').selectpicker();
+    $('.selectpicker').selectpicker('size', '6');
 
     $('.number-mask').mask("+99 999 999 99 99");
     
@@ -107,6 +107,38 @@ $('.phone-add').on("click", function() {
            }, 400);
         });
     });
+
+    $('.tel-input').on("keyup", function() {
+        $str = $(this).val();
+        
+        for (var i = 0; i < $str.length; i++) {
+          if ($str[i] == '+' || $str[i] == '_' || $str[i] == ' ') {
+            $str = $str.replace(/\+/g, '');
+            $str = $str.replace(/_/g, '');
+            $str = $str.replace(/ /g, '');
+          }
+        }
+      
+        if ($str.length < 4) {
+      
+          $(this).addClass('wrong-value');
+      
+          if ($(this).parent().parent().next().hasClass('wrong-value-text') == false) {
+            $(this).parent().parent().after('<p class="wrong-value-text">Неверный формат номера*</p>');
+            $(this).parent().parent().next().next().slideUp(200);
+          }
+      
+        } else if ($str.length >= 4) {
+          
+          $(this).removeClass('wrong-value');
+      
+          if ($(this).parent().parent().next().hasClass('wrong-value-text') == true) {
+            $(this).parent().parent().next().remove();
+          }
+      
+          $(this).parent().parent().next().slideDown(300);
+        }
+      });
 });
 
 // delete number

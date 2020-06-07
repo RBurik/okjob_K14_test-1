@@ -18,6 +18,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&subset=latin-ext");
 @-ms-viewport {
   width: device-width;
 }
@@ -2110,7 +2111,7 @@ input {
 input:hover {
   border-color: #707070;
 }
-input[type=text], input[type=password], input[type=email], input[type=number] {
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=date] {
   font-size: 1.125rem;
   line-height: 1.5679rem;
   padding: 0.5rem 1rem;
@@ -2154,52 +2155,52 @@ input:hover {
 }
 
 @media (max-width: 992px) {
-  input, input[type=text], input[type=password], input[type=email], input[type=number] {
+  input, input[type=text], input[type=password], input[type=email], input[type=number], input[type=date] {
     padding: 0.6625rem 1rem;
   }
 }
 @media (max-width: 556px) {
-  input, input[type=text], input[type=password], input[type=email], input[type=number] {
+  input, input[type=text], input[type=password], input[type=email], input[type=number], input[type=date] {
     font-size: 1rem;
     line-height: 1rem;
     position: relative;
     height: 2.875rem;
     padding: 0.7625rem 1rem;
   }
-  input::-ms-input-placeholder, input[type=text]::-ms-input-placeholder, input[type=password]::-ms-input-placeholder, input[type=email]::-ms-input-placeholder, input[type=number]::-ms-input-placeholder {
+  input::-ms-input-placeholder, input[type=text]::-ms-input-placeholder, input[type=password]::-ms-input-placeholder, input[type=email]::-ms-input-placeholder, input[type=number]::-ms-input-placeholder, input[type=date]::-ms-input-placeholder {
     opacity: 0;
     -ms-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
   }
-  input::placeholder, input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder, input[type=number]::placeholder {
+  input::placeholder, input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder {
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  input:focus::-ms-input-placeholder, input[type=text]:focus::-ms-input-placeholder, input[type=password]:focus::-ms-input-placeholder, input[type=email]:focus::-ms-input-placeholder, input[type=number]:focus::-ms-input-placeholder {
+  input:focus::-ms-input-placeholder, input[type=text]:focus::-ms-input-placeholder, input[type=password]:focus::-ms-input-placeholder, input[type=email]:focus::-ms-input-placeholder, input[type=number]:focus::-ms-input-placeholder, input[type=date]:focus::-ms-input-placeholder {
     opacity: 1;
     -ms-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
   }
-  input:focus::placeholder, input[type=text]:focus::placeholder, input[type=password]:focus::placeholder, input[type=email]:focus::placeholder, input[type=number]:focus::placeholder {
+  input:focus::placeholder, input[type=text]:focus::placeholder, input[type=password]:focus::placeholder, input[type=email]:focus::placeholder, input[type=number]:focus::placeholder, input[type=date]:focus::placeholder {
     opacity: 1;
     transition: opacity 0.3s ease;
   }
-  input:focus::-webkit-input-placeholder, input[type=text]:focus::-webkit-input-placeholder, input[type=password]:focus::-webkit-input-placeholder, input[type=email]:focus::-webkit-input-placeholder, input[type=number]:focus::-webkit-input-placeholder {
+  input:focus::-webkit-input-placeholder, input[type=text]:focus::-webkit-input-placeholder, input[type=password]:focus::-webkit-input-placeholder, input[type=email]:focus::-webkit-input-placeholder, input[type=number]:focus::-webkit-input-placeholder, input[type=date]:focus::-webkit-input-placeholder {
     opacity: 1;
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
   }
-  input:focus::-moz-placeholder, input[type=text]:focus::-moz-placeholder, input[type=password]:focus::-moz-placeholder, input[type=email]:focus::-moz-placeholder, input[type=number]:focus::-moz-placeholder {
+  input:focus::-moz-placeholder, input[type=text]:focus::-moz-placeholder, input[type=password]:focus::-moz-placeholder, input[type=email]:focus::-moz-placeholder, input[type=number]:focus::-moz-placeholder, input[type=date]:focus::-moz-placeholder {
     opacity: 1;
     -moz-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
   }
-  input:focus:-moz-placeholder, input[type=text]:focus:-moz-placeholder, input[type=password]:focus:-moz-placeholder, input[type=email]:focus:-moz-placeholder, input[type=number]:focus:-moz-placeholder {
+  input:focus:-moz-placeholder, input[type=text]:focus:-moz-placeholder, input[type=password]:focus:-moz-placeholder, input[type=email]:focus:-moz-placeholder, input[type=number]:focus:-moz-placeholder, input[type=date]:focus:-moz-placeholder {
     opacity: 1;
     -moz-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
   }
-  input:focus:-ms-input-placeholder, input[type=text]:focus:-ms-input-placeholder, input[type=password]:focus:-ms-input-placeholder, input[type=email]:focus:-ms-input-placeholder, input[type=number]:focus:-ms-input-placeholder {
+  input:focus:-ms-input-placeholder, input[type=text]:focus:-ms-input-placeholder, input[type=password]:focus:-ms-input-placeholder, input[type=email]:focus:-ms-input-placeholder, input[type=number]:focus:-ms-input-placeholder, input[type=date]:focus:-ms-input-placeholder {
     opacity: 1;
     -ms-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
@@ -2365,10 +2366,9 @@ textarea {
 }
 
 label, legend {
-  font-size: 1.125rem;
-  line-height: 1.5679rem;
+  font-size: 1rem;
+  line-height: 1.375rem;
   display: block;
-  font-weight: bold;
   font-weight: normal;
 }
 
@@ -2517,11 +2517,12 @@ img {
   position: relative;
 }
 .keyword-input-container .keyword-input-button {
+  transition: 0.3s;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0.37rem;
+  top: 0.27rem;
   right: 0.5rem;
   height: 2rem;
   width: 2rem;
@@ -2530,15 +2531,21 @@ img {
   background-color: #5199FC;
   border-radius: 0.25rem;
 }
+.keyword-input-container .keyword-input-button:hover {
+  box-shadow: 0 0.1875rem 0.75rem 0 rgba(81, 153, 252, 0.4);
+}
+.keyword-input-container .keyword-input-button:active {
+  transform: scale(0.9);
+}
 @media (max-width: 556px) {
   .keyword-input-container .keyword-input-button {
-    top: 0.6rem;
+    top: 0.4rem;
   }
 }
 
 input.keyword-input {
-  font-size: 1.125rem;
-  line-height: 1.5679rem;
+  font-size: 1rem;
+  line-height: 1.375rem;
   margin: 0 0 1rem 0;
 }
 
@@ -2572,11 +2579,16 @@ header {
   position: relative;
   z-index: 999;
   padding: 0;
-  box-shadow: 0 0 0.9375vw 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 1.125rem 0 rgba(0, 0, 0, 0.12);
   background-color: #fff;
 }
 #header .container, #header .right-side, #header .left-side {
-  height: 100%;
+  height: 5.375rem;
+}
+@media (max-width: 556px) {
+  #header .container, #header .right-side, #header .left-side {
+    height: 3rem;
+  }
 }
 
 /* Full Width Header */
@@ -10173,6 +10185,11 @@ input:checked + .switch-button:before {
   left: 0;
   top: 0.125rem;
 }
+@media (max-width: 556px) {
+  .checkbox label span.checkbox-icon {
+    top: -0.1rem;
+  }
+}
 .checkbox label span.checkbox-icon:hover {
   border-color: #707070;
 }
@@ -12167,9 +12184,11 @@ input:checked + .switch-button:before {
   margin: 0;
   line-height: 1.5rem;
 }
+.tags-container input[type=checkbox] + label:active {
+  transform: scale(0.9);
+}
 .tags-container input[type=checkbox] + label:hover {
-  background-color: #707070;
-  color: #F6F6F6;
+  background-color: rgba(112, 112, 112, 0.2);
 }
 @media (max-width: 556px) {
   .tags-container input[type=checkbox] + label {
@@ -12181,6 +12200,9 @@ input:checked + .switch-button:before {
   background-color: #5199FC;
   color: #F6F6F6;
   transition: 0.3s;
+}
+.tags-container input[type=checkbox]:checked + label:hover {
+  box-shadow: 0 0 0.5rem #5199fc;
 }
 .tags-container input[type=checkbox]:checked + label:before {
   max-width: 1.875rem;
@@ -12211,7 +12233,6 @@ input:checked + .switch-button:before {
   display: inline-block;
   float: left;
   margin: 0 0.5rem 0.5rem 0;
-  overflow: hidden;
 }
 
 /* ---------------------------------- */
@@ -12518,6 +12539,12 @@ input:checked + .switch-button:before {
   border-radius: 0.5rem;
   text-align: center;
   font-size: 1.625rem;
+}
+#backtotop a:hover {
+  box-shadow: 0 0 0.5rem rgba(81, 153, 252, 0.08);
+}
+#backtotop a:active {
+  transform: scale(0.9);
 }
 
 body #backtotop a {
@@ -14172,7 +14199,12 @@ select.bs-select-hidden, select.selectpicker {
 .bootstrap-select.btn-group .dropdown-menu {
   min-width: 100%;
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: 1.125rem;
+}
+@media (max-width: 556px) {
+  .bootstrap-select.btn-group .dropdown-menu {
+    font-size: 1rem;
+  }
 }
 .bootstrap-select.btn-group .dropdown-menu.inner {
   position: static;
@@ -14227,9 +14259,9 @@ select.bs-select-hidden, select.selectpicker {
   border: none;
 }
 .bootstrap-select.btn-group .no-results {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   background: #f6f6f6;
-  margin: 8px 0;
+  margin: 0.5rem 0;
   margin-bottom: 0;
   border-radius: 0.25rem;
   white-space: nowrap;
@@ -14353,10 +14385,10 @@ select.bs-select-hidden, select.selectpicker {
   float: none;
   box-shadow: none;
   background: #f4f4f4;
-  margin: -5px 0 10px 0;
-  height: 38px;
-  line-height: 38px;
-  padding: 10px;
+  margin: -0.3125rem 0 0.625rem 0;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  padding: 0.625rem;
 }
 .bs-searchbox .form-control:focus {
   margin-bottom: 0;
@@ -14364,10 +14396,10 @@ select.bs-select-hidden, select.selectpicker {
   float: none;
   box-shadow: none;
   background: #f4f4f4;
-  margin: -5px 0 10px 0;
-  height: 38px;
-  line-height: 38px;
-  padding: 10px;
+  margin: -0.3125rem 0 0.625rem 0;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  padding: 0.625rem;
 }
 .bs-searchbox:after {
   content: "";
@@ -14375,13 +14407,13 @@ select.bs-select-hidden, select.selectpicker {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   display: inline-block;
   position: absolute;
   margin: 0;
-  right: 16px;
-  top: 9px;
+  right: 1rem;
+  top: 0.5625rem;
 }
 
 .caret {
@@ -14413,12 +14445,17 @@ select.bs-select-hidden, select.selectpicker {
   float: left;
   padding: 0.5rem 0.5rem;
   margin: -0.25rem 0 0 0;
-  font-size: 1rem;
+  font-size: 1.125rem;
   text-align: left;
   list-style: none;
   background-color: #fff;
   border: 0.0625rem solid #E0E0E0;
   border-radius: 0.25rem;
+}
+@media (max-width: 556px) {
+  .dropdown-menu {
+    font-size: 1rem;
+  }
 }
 .dropdown-menu.pull-right {
   right: 0;
@@ -14461,7 +14498,7 @@ select.bs-select-hidden, select.selectpicker {
 .dropdown-menu > li > a:hover {
   color: #5199FC;
   text-decoration: none;
-  background-color: rgba(42, 65, 232, 0.04);
+  background-color: #5199fc1a;
 }
 .dropdown-menu > .active > a {
   color: #5199FC;
@@ -14501,6 +14538,8 @@ select.bs-select-hidden, select.selectpicker {
 
 /* Custom Scrollbar for -wekbit */
 .bootstrap-select.btn-group .dropdown-menu {
+  max-height: 100px;
+  overflow: hidden;
   opacity: 0;
   transition: 0.4s;
   display: block;
@@ -14599,6 +14638,7 @@ select.bs-select-hidden, select.selectpicker {
   color: #707070;
   max-width: 100%;
   width: 100%;
+  max-height: 2.5625rem;
   box-sizing: border-box;
   display: block;
   background-color: #fff;
@@ -14613,7 +14653,7 @@ select.bs-select-hidden, select.selectpicker {
 }
 @media (max-width: 556px) {
   .bootstrap-select.btn-group button {
-    height: 2.875rem;
+    min-height: 2.875rem;
     background-color: inherit;
   }
 }
@@ -14632,6 +14672,7 @@ select.bs-select-hidden, select.selectpicker {
     border-color: #707070;
   }
   .bootstrap-select.btn-group:hover div.dropdown-menu {
+    z-index: 1001;
     border: 0.0625rem solid #707070;
   }
 }
@@ -17705,6 +17746,12 @@ ul.dashboard-box-list > li:hover {
   .dashboard-sidebar .dashboard-sidebar-inner .dashboard-nav .user-avatar:after {
     display: none;
   }
+  .dashboard-sidebar .dashboard-sidebar-inner .dashboard-nav ul .two-column li a {
+    color: #AAA;
+  }
+  .dashboard-sidebar .dashboard-sidebar-inner .dashboard-nav ul .two-column li a svg path {
+    stroke: #AAA;
+  }
   .dashboard-sidebar .dashboard-sidebar-inner .dashboard-nav ul li {
     border-bottom: 0.0625rem solid #3B3B3B;
   }
@@ -19035,20 +19082,6 @@ body.trumbowyg-body-fullscreen {
 
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-SemiBoldItalic.eot");
-  src: url("../fonts/Nunito-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Nunito-SemiBoldItalic.woff") format("woff"), url("../fonts/Nunito-SemiBoldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito-LightItalic.eot");
-  src: url("../fonts/Nunito-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito-LightItalic.woff2") format("woff2"), url("../fonts/Nunito-LightItalic.woff") format("woff"), url("../fonts/Nunito-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Nunito";
   src: url("../fonts/Nunito-SemiBold.eot");
   src: url("../fonts/Nunito-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito-SemiBold.woff2") format("woff2"), url("../fonts/Nunito-SemiBold.woff") format("woff"), url("../fonts/Nunito-SemiBold.ttf") format("truetype");
   font-weight: 600;
@@ -19061,20 +19094,15 @@ body.trumbowyg-body-fullscreen {
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito-Italic.eot");
-  src: url("../fonts/Nunito-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito-Italic.woff2") format("woff2"), url("../fonts/Nunito-Italic.woff") format("woff"), url("../fonts/Nunito-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito-Light.eot");
-  src: url("../fonts/Nunito-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Nunito-Light.woff2") format("woff2"), url("../fonts/Nunito-Light.woff") format("woff"), url("../fonts/Nunito-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
+/* -------------------------------------------------------------- */
+/* Default Colors
+----------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+/* Typography
+----------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+/* Header Settings for Desktop Devices
+----------------------------------------------------------------- */
 html {
   font-family: "Nunito", sans-serif;
   font-size: 1.1111111111vw;
@@ -19098,6 +19126,10 @@ hr {
   /* Цвет линии для браузера Firefox и Opera */
   height: 0.0625rem;
   /* Толщина линии */
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
 }
 
 input::-webkit-outer-spin-button,
@@ -19339,6 +19371,7 @@ input::placeholder {
   position: relative;
   margin: 0;
   z-index: 1;
+  color: #323232;
   margin-bottom: 1rem;
 }
 .wrapper .container .main .buttons-below {
@@ -19350,15 +19383,28 @@ input::placeholder {
   padding: 1rem 2rem;
   border: 0.0625rem solid #5199FC;
   border-radius: 0.25rem;
+  transition: 0.15s;
 }
-.wrapper .container .main .buttons-below button:first-child {
+.wrapper .container .main .buttons-below button:first-child, .wrapper .container .main .buttons-below button:nth-child(2) {
   margin-right: 2rem;
   color: #5199FC;
   background-color: #fff;
 }
-.wrapper .container .main .buttons-below button:not(:first-child) {
+.wrapper .container .main .buttons-below button:first-child:hover, .wrapper .container .main .buttons-below button:nth-child(2):hover {
+  background: rgba(81, 153, 252, 0.08);
+}
+.wrapper .container .main .buttons-below button:first-child:active, .wrapper .container .main .buttons-below button:nth-child(2):active {
+  transform: scale(0.9);
+}
+.wrapper .container .main .buttons-below button:nth-child(3), .wrapper .container .main .buttons-below button:last-child {
   color: #fff;
   background-color: #5199FC;
+}
+.wrapper .container .main .buttons-below button:nth-child(3):hover, .wrapper .container .main .buttons-below button:last-child:hover {
+  box-shadow: 0 0.1875rem 0.75rem 0 rgba(81, 153, 252, 0.4);
+}
+.wrapper .container .main .buttons-below button:nth-child(3):active, .wrapper .container .main .buttons-below button:last-child:active {
+  transform: scale(0.9);
 }
 
 .passport .passport-photo-main-subblock .info-block {
@@ -19403,6 +19449,8 @@ input::placeholder {
   line-height: 1.5625rem;
   padding: 0 0.25rem;
   position: absolute;
+  font-weight: normal;
+  color: #707070;
   top: -1rem;
   background-color: #fff;
 }
@@ -19416,6 +19464,7 @@ input::placeholder {
   font-size: 1.125rem;
   line-height: 1.5625rem;
   margin-top: 1rem;
+  font-weight: bold;
   color: #323232;
 }
 .about-me .qualification-main-subblock .qualification-information .qualification-delete {
@@ -19474,10 +19523,13 @@ input::placeholder {
   line-height: 1.5625rem;
   padding: 0 0.25rem;
   position: absolute;
-  top: -0.7rem;
+  top: -1rem;
+  color: #707070;
+  font-weight: normal;
   background-color: #fff;
 }
 .about-me .languages-knowledge-main-subblock .language-information .language-level-wrapper {
+  margin: 1rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19511,22 +19563,16 @@ input::placeholder {
   border-radius: 50%;
   background-color: #F0F0F0;
 }
-.about-me .languages-knowledge-main-subblock .language-information .language-level-wrapper .language-level-bar .slider-fill {
-  border-radius: 0.25rem;
-  background: #5199FC;
-}
-.about-me .languages-knowledge-main-subblock .language-information .language-level-wrapper .language-level-bar span {
-  width: 1.1875rem;
-  height: 1.1875rem;
-  top: -0.5rem;
+.about-me .languages-knowledge-main-subblock .language-information .language-level-wrapper .language-level-bar ul li:first-child {
+  background-color: #5199FC;
 }
 .about-me .languages-knowledge-main-subblock .language-information .language-level-wrapper .language-level-bar .language-prompt {
   font-size: 0.75rem;
   line-height: 1rem;
   padding: 0.25rem 0.5rem;
   position: absolute;
-  top: -2.5rem;
-  left: -0.4rem;
+  top: -3.3rem;
+  left: -0.8rem;
   color: #F6F6F6;
   border-radius: 0.25rem;
   background-color: #323232;
@@ -19534,9 +19580,9 @@ input::placeholder {
 .about-me .languages-knowledge-main-subblock .language-information .language-level-wrapper .language-level-bar .language-prompt:before {
   content: "";
   position: absolute;
-  bottom: -1rem;
+  bottom: -0.8rem;
   border: 0.5rem solid transparent;
-  border-top: 0.5rem solid #323232;
+  border-top: 0.3rem solid #323232;
 }
 .about-me .languages-knowledge-main-subblock .language-information .language-delete {
   margin: 0 -2rem;
@@ -19560,6 +19606,7 @@ input::placeholder {
   color: #707070;
 }
 .contacts .phone-main-subblock .phone-wrapper .phone-input {
+  margin-bottom: 0.5rem;
   width: 25.4375rem;
   position: relative;
   display: flex;
@@ -19599,6 +19646,7 @@ input::placeholder {
   stroke: #FF0066;
 }
 .contacts .phone-main-subblock .phone-wrapper .phone-social-links {
+  display: none;
   margin-top: 1rem;
   width: 25.4375rem;
   border-radius: 0.25rem;
@@ -19687,6 +19735,9 @@ input::placeholder {
 
 .datepicker-here {
   cursor: pointer;
+  background-image: url(../img/calendar.svg);
+  background-repeat: no-repeat;
+  background-position: center right 0.5rem;
 }
 
 .add-button,
@@ -19695,8 +19746,12 @@ input::placeholder {
   line-height: 1.5679rem;
   transition: 0.2s;
   display: flex;
-  align-items: center;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  max-height: 2.5625rem;
   padding: 0.51875rem 0;
 }
 .add-button img,
@@ -19756,10 +19811,10 @@ input::placeholder {
 .switch-container .special-title svg {
   position: absolute;
   right: -2rem;
-  bottom: 0.2rem;
+  bottom: 0.02rem;
   display: inline;
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-left: 0.5rem;
 }
 .switch-container .special-title svg path {
@@ -19789,74 +19844,85 @@ input::placeholder {
 .two-column li {
   flex: 1;
 }
-.two-column li a {
-  color: #AAA !important;
-}
-.two-column li svg path {
-  stroke: #AAA !important;
-}
 
 .input-group {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .input-group button {
+  transition: 0.3s;
+  position: relative;
+  padding-bottom: 0.5rem;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.375rem;
-  height: 2.375rem;
-  border-radius: 0.25rem;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
   color: #F6F6F6;
+  border-radius: 0.25rem;
   background-color: #5199FC;
+}
+.input-group button:first-child {
+  margin-right: -1rem;
+}
+.input-group button:last-child {
+  margin-left: -1rem;
+}
+.input-group button:hover {
+  box-shadow: 0 0.1875rem 0.75rem 0 rgba(81, 153, 252, 0.4);
+}
+.input-group button:active {
+  transform: scale(0.9);
 }
 .input-group .bootstrap-touchspin-prefix,
 .input-group .bootstrap-touchspin-postfix {
+  position: relative;
+  z-index: 1;
   display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
   align-items: center;
+  -webkit-align-items: center;
   height: 2.375rem;
   white-space: nowrap;
+  color: #707070;
   background-color: #F0F0F0;
 }
 .input-group .bootstrap-touchspin-prefix {
-  padding-left: 0.5rem;
-  border: 0.0625rem solid #E0E0E0;
-  border-right: none;
+  padding-left: 4.5rem;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
+  border: none;
 }
 .input-group input {
   margin: 0;
+  padding: 0;
+  width: 5rem;
   height: 2.375rem;
   display: flex;
   text-align: center;
   background-color: #F0F0F0;
   color: #FF0066;
   border-radius: 0;
-  border: 0.0625rem solid #E0E0E0;
-  border-left: none;
-  border-right: none;
+  border: none;
 }
 .input-group input:focus {
   color: #FF0066;
-  border-top: 0.0625rem solid #E0E0E0;
-  border-bottom: 0.0625rem solid #E0E0E0;
-  border-left: none;
-  border-right: none;
+  border: none;
   box-shadow: none;
 }
 .input-group input:hover {
-  border-top: 0.0625rem solid #E0E0E0;
-  border-bottom: 0.0625rem solid #E0E0E0;
-  border-left: none;
-  border-right: none;
+  border: none;
 }
 .input-group .bootstrap-touchspin-postfix {
-  padding-right: 0.5rem;
-  border: 0.0625rem solid #E0E0E0;
-  border-left: none;
+  padding-right: 4.5rem;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+  border: none;
 }
 
 .checkboxes {
@@ -19864,6 +19930,14 @@ input::placeholder {
 }
 .checkboxes .checkbox {
   margin-bottom: 1rem;
+  color: #707070;
+}
+.checkboxes .checkbox input:checked + label .checkbox-icon:hover {
+  box-shadow: 0 0.1875rem 0.75rem 0 rgba(81, 153, 252, 0.4);
+}
+.checkboxes .checkbox label {
+  font-size: 1.125rem;
+  line-height: 1.5679rem;
 }
 
 .dropzone {
@@ -19892,6 +19966,20 @@ input::placeholder {
 }
 .dropzone .dropzone-interface .file-watch-button {
   margin-right: auto;
+}
+
+.wrong-value {
+  border-color: #FF0066;
+}
+.wrong-value:focus, .wrong-value:hover {
+  border-color: #FF0066;
+}
+
+.wrong-value-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin: 0.5rem 0 1rem 1rem;
+  color: #FF0066;
 }
 
 #buttons-below-line {
@@ -19982,6 +20070,7 @@ input::placeholder {
   html {
     font-size: 5vw;
     overflow-x: hidden;
+    background-color: #fff;
   }
 
   .logo-mobile {
@@ -20037,8 +20126,8 @@ input::placeholder {
     color: #323232;
     top: 2rem;
     left: 1rem;
-    background-color: inherit;
-    z-index: 0;
+    background-color: #fff;
+    z-index: 2;
   }
   .wrapper .container .main .main-block {
     padding: 2rem 1rem 4rem 1rem;
@@ -20093,22 +20182,50 @@ input::placeholder {
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    width: calc(100% - 2rem);
-    bottom: 1rem;
+    width: 100%;
+    max-height: 3rem;
+    bottom: 0;
+    left: 0;
     z-index: 1000;
   }
   .wrapper .container .main .buttons-below button {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 0.875rem;
     padding: 1rem;
-    width: calc(50% - 1rem / 2);
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    width: 50%;
+    max-height: 3rem;
+    border-radius: 0;
   }
-  .wrapper .container .main .buttons-below button:first-child {
-    margin-right: 1rem;
+  .wrapper .container .main .buttons-below button:first-child, .wrapper .container .main .buttons-below button:nth-child(2) {
+    margin-right: 0;
+    background: #fff;
+  }
+  .wrapper .container .main .buttons-below button:first-child:hover, .wrapper .container .main .buttons-below button:nth-child(2):hover {
+    background: #fff;
+  }
+  .wrapper .container .main .buttons-below button:first-child:active, .wrapper .container .main .buttons-below button:nth-child(2):active {
+    transform: scale(1);
+  }
+  .wrapper .container .main .buttons-below button:nth-child(3):hover, .wrapper .container .main .buttons-below button:last-child:hover {
+    box-shadow: none;
+  }
+  .wrapper .container .main .buttons-below button:nth-child(3):active, .wrapper .container .main .buttons-below button:last-child:active {
+    transform: scale(1);
   }
 
   .passport .passport-photo-main-subblock .passport-pic {
     width: 100%;
+  }
+  .passport .switch-container {
+    margin: 1rem -1rem;
+  }
+  .passport .special-block {
+    margin-bottom: 1rem;
   }
 
   .contacts .phone-main-subblock .phone-wrapper .phone-input,
@@ -20129,6 +20246,7 @@ input::placeholder {
     height: 3rem;
   }
   .contacts .phone-main-subblock .phone-wrapper .phone-social-links {
+    margin-top: 0.5rem;
     width: 100%;
   }
   .contacts .phone-main-subblock .phone-wrapper .phone-social-links .phone-social-links-title {
@@ -20152,13 +20270,16 @@ input::placeholder {
     width: 100%;
   }
   .about-me .qualification-main-subblock .qualification-information {
-    width: auto;
+    margin: 1rem 0;
     padding: 2rem 1rem 0 1rem;
+    width: auto;
   }
   .about-me .qualification-main-subblock .qualification-information .qualification-information-title {
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1rem;
-    top: -0.75rem;
+    top: -0.6rem;
+    color: #707070;
+    font-weight: normal;
   }
   .about-me .qualification-main-subblock .qualification-information p {
     font-size: 0.875rem;
@@ -20170,11 +20291,19 @@ input::placeholder {
   .about-me .qualification-main-subblock .qualification-information p .text-red:focus {
     box-shadow: none !important;
   }
+  .about-me .qualification-main-subblock .qualification-information .qualification-information-subtitle {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
   .about-me .qualification-main-subblock .qualification-information .keyword-input-container input::-ms-input-placeholder {
     opacity: 1;
   }
   .about-me .qualification-main-subblock .qualification-information .keyword-input-container input::placeholder {
     opacity: 1;
+  }
+  .about-me .qualification-main-subblock .qualification-information .checkboxes .checkbox {
+    padding: 0;
+    background-color: inherit;
   }
   .about-me .qualification-main-subblock .qualification-information .qualification-delete {
     margin-left: -1rem;
@@ -20196,6 +20325,9 @@ input::placeholder {
   .about-me .license-photo-main-subblock .two-column .dropzone {
     width: 100%;
   }
+  .about-me .languages-knowledge-main-subblock .language-select {
+    margin-bottom: 1rem;
+  }
   .about-me .languages-knowledge-main-subblock .language-wrapper .bootstrap-select.btn-group {
     width: 100%;
   }
@@ -20203,17 +20335,27 @@ input::placeholder {
     opacity: 1;
   }
   .about-me .languages-knowledge-main-subblock .language-wrapper .language-information {
+    margin: 2rem 0 1rem 0;
     padding: 2rem 1rem 0 1rem;
     width: 100%;
   }
   .about-me .languages-knowledge-main-subblock .language-wrapper .language-information .language-information-title {
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1rem;
+    top: -0.6rem;
   }
   .about-me .languages-knowledge-main-subblock .language-wrapper .language-information .language-level-wrapper .language-information-subtitle {
     font-size: 0.75rem;
     line-height: 1rem;
     margin-bottom: 1rem;
+  }
+  .about-me .languages-knowledge-main-subblock .language-wrapper .language-information .language-level-wrapper .language-level-bar {
+    margin-left: 1rem;
+    flex: 0.95;
+    margin-right: auto;
+  }
+  .about-me .languages-knowledge-main-subblock .language-wrapper .language-information .language-level-wrapper .language-level-bar .language-prompt {
+    left: -0.7rem;
   }
   .about-me .languages-knowledge-main-subblock .language-wrapper .language-information .language-delete {
     margin: 0 -1rem;
@@ -20222,7 +20364,11 @@ input::placeholder {
   .about-me .languages-knowledge-main-subblock .language-add {
     font-size: 1rem;
     line-height: 1rem;
+    margin: 1rem 0;
     width: 100%;
+  }
+  .about-me .switch-container {
+    margin: 1rem -1rem;
   }
 
   .info-block {
@@ -20238,14 +20384,11 @@ input::placeholder {
 
   .add-button,
 .delete-button {
-    padding: 0.875rem 0;
-    width: 100%;
-    height: 2.875rem;
-  }
-
-  .add-button {
     font-size: 1rem;
     line-height: 1rem;
+    padding: 0.875rem 0;
+    width: 100%;
+    min-height: 2.875rem;
   }
 
   .two-column {
@@ -20258,15 +20401,28 @@ input::placeholder {
 
   .input-group input {
     padding: 0;
-    width: 100%;
+    width: 3rem;
+  }
+  .input-group .bootstrap-touchspin-prefix {
+    padding-left: 1.5rem;
+  }
+  .input-group .bootstrap-touchspin-postfix {
+    padding-right: 1.5rem;
   }
 
   .checkboxes .checkbox {
+    padding: 0.9375rem 1rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    background-color: #F0F0F0;
+  }
+  .checkboxes .checkbox label {
     font-size: 1rem;
     line-height: 1rem;
-    padding: 0.5rem 1rem;
-    width: 100%;
-    background-color: #F0F0F0;
+  }
+
+  hr {
+    display: none;
   }
 
   .switch-container {
@@ -20290,9 +20446,16 @@ input::placeholder {
   }
   .switch-container .special-title svg {
     bottom: -0.1rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
   .switch-container .switch {
     display: flex;
     align-items: center;
+  }
+
+  .wrong-value-text {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
